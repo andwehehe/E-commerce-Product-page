@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/favicon-32x32.png" sizes="favicon-32x32" type="imgages/png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+  <header class="heading__container">
+    <div class="left__division">
+      <img src="assets/images/icon-menu.svg" alt="menu" class="menu__icon">
+      <h1 class="brand__name">sneakers</h1>
+    </div>
+    <div class="right__division">
+      <img src="assets/images/icon-cart.svg" alt="cart" class="cart__icon">
+      <img src="assets/images/image-avatar.png" alt="user profile" class="profile__pic">
+    </div>
+  </header>
+
+  <main class="main__content">
+    <article class="slider">
+      <div class="slider__buttons-container">
+        <button data-value="prev" class="prev">
+          <img src="assets/images/icon-previous.svg" alt="left__arrow">
+        </button>
+        
+        <button data-value="next" class="next">
+          <img src="assets/images/icon-next.svg" alt="right__arrow">
+        </button>
+      </div>
+
+      <img src="assets/images/image-product-1.jpg" alt="left arrow" class="product__image">
+    </article>
+
+    <section class="product-info">
+
+      <article class="about-product">
+        <p class="company-name">SNEAKER COMPANY</p>
+        <h1 class="product-name">Fall Limited Edition Sneakers</h1>
+        <p class="product-description">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
+      </article>
+
+      <article class="price-info">
+        <div class="current-price-info">
+          <h2 class="current-price">$125.00</h2>
+          <p class="discount">50%</p>
+        </div>
+        <p class="before-price">$250.00</p>
+      </article>
+
+      <article class="cart-buttons">
+        <div class="quantity-button">
+          <button class="decrement">
+            <img src="assets/images/icon-minus.svg" alt="decrease">
+          </button>
+
+          <input type="number" name="quantity" id="quantity" class="quantity" placeholder="0">
+
+          <button class="increment">
+            <img src="assets/images/icon-plus.svg" alt="increase">
+          </button>
+        </div>
+
+        <button class="add-to-cart">
+          <img src="assets/images/icon-cart-black.svg" alt="cart icon" class="add-to-cart-icon">
+          Add to cart
+        </button>
+      </article>
+
+    </section>
+
+  </main>
+  
+  <script src="main.js"></script>
+</body>
+</html>

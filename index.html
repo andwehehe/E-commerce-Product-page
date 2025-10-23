@@ -5,19 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="assets/images/favicon-32x32.png" sizes="favicon-32x32" type="imgages/png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="queries.css">
   <title>Frontend Mentor | E-commerce product page</title>
 </head>
 <body>
   <header class="heading__container">
     <div class="left__division">
       <img src="assets/images/icon-menu.svg" alt="menu" class="menu__icon">
-      <h1 class="brand__name">sneakers</h1>
+      <img src="assets/images/logo.svg" alt="logo" class="brand-name">
+
+      <nav class="nav">
+        <p class="nav__collection">Collection</p>
+        <p class="nav__men">Men</p>
+        <p class="nav__women">Women</p>
+        <p class="nav__about">About</p>
+        <p class="nav__contact">Contact</p>
+      </nav>
     </div>
+
     <div class="right__division">
       <img src="assets/images/icon-cart.svg" alt="cart" class="cart__icon">
       <img src="assets/images/image-avatar.png" alt="user profile" class="profile__pic">
     </div>
   </header>
+
+  <hr>
 
   <main class="main__content">
     <article class="slider">
@@ -32,6 +44,34 @@
       </div>
 
       <img src="assets/images/image-product-1.jpg" alt="left arrow" class="product__image">
+      <div class="product-slider">
+
+        <label class="product-wrapper-1">
+          <img src="assets/images/image-product-1-thumbnail.jpg" alt="product 1">
+          <input type="radio" name="product" value="1"  checked hidden>
+          <div class="cover"></div>
+        </label>
+
+        <label class="product-wrapper-2">
+          <img src="assets/images/image-product-2-thumbnail.jpg" alt="product 2">
+          <input type="radio" name="product" value="2" hidden>
+          <div class="cover"></div>
+        </label>
+
+        <label class="product-wrapper-3"> 
+          <img src="assets/images/image-product-3-thumbnail.jpg" alt="product 3">
+          <input type="radio" name="product" value="3" hidden>
+          <div class="cover"></div>
+        </label>
+
+        <label class="product-wrapper-4">
+          <img src="assets/images/image-product-4-thumbnail.jpg" alt="product 4">
+          <input type="radio" name="product" value="4" hidden>
+          <div class="cover"></div>
+        </label>
+        
+      </div>
+       
     </article>
 
     <section class="product-info">

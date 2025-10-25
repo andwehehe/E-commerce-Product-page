@@ -9,35 +9,65 @@
   <title>Frontend Mentor | E-commerce product page</title>
 </head>
 <body>
-  <div class="overlay">
+
+  <div class="overlay-mobile">
     <section class="sidebar">
       <img src="assets/images/icon-close.svg" alt="close" class="close">
       <nav class="mobile-menu">
-        <label class="side-menu-item">
-          Collections
-          <radio class="side-menu-radio"></radio>
-        </label>
-
-        <label class="side-menu-item">
-          Men
-          <radio class="side-menu-radio"></radio>
-        </label>
-
-        <label class="side-menu-item">
-          Women
-          <radio class="side-menu-radio"></radio>
-        </label>
-
-        <label class="side-menu-item">
-          About
-          <radio class="side-menu-radio"></radio>
-        </label>
-
-        <label class="side-menu-item">
-          Contact
-          <radio class="side-menu-radio"></radio>
-        </label>
+        <p class="side-menu-item">Collections</p>
+        <p class="side-menu-item">Men</p>
+        <p class="side-menu-item">Women</p>
+        <p class="side-menu-item">About</p>
+        <p class="side-menu-item">Contact</p>
       </nav>
+    </section>
+  </div>
+
+  <div class="overlay-desktop">
+    <section class="product-overview">
+
+      <div class="remove-section">
+        <img src="assets/images/icon-close-white.svg" alt="close" class="close-overlay-desktop">
+      </div>
+
+      <div class="highlighted-img-wrapper">
+        <div class="sb-container-overlay">
+          <button data-value="prev" class="prev-desktop">
+            <img src="assets/images/icon-previous.svg" alt="left__arrow">
+          </button>
+          
+          <button data-value="next" class="next-desktop">
+            <img src="assets/images/icon-next.svg" alt="right__arrow">
+          </button>
+        </div>
+        <img src="assets/images/image-product-1.jpg" alt="left arrow" class="highlighted-img">
+      </div>
+
+      <div class="overlay-desktop-slider">
+        <label class="product-wrapper-overlay">
+          <img src="assets/images/image-product-1-thumbnail.jpg" alt="product 1">
+          <input type="radio" name="product" value="1"  checked hidden>
+          <div class="cover-desktop"></div>
+        </label>
+
+        <label class="product-wrapper-overlay">
+          <img src="assets/images/image-product-2-thumbnail.jpg" alt="product 2">
+          <input type="radio" name="product" value="2" hidden>
+          <div class="cover-desktop"></div>
+        </label>
+
+        <label class="product-wrapper-overlay"> 
+          <img src="assets/images/image-product-3-thumbnail.jpg" alt="product 3">
+          <input type="radio" name="product" value="3" hidden>
+          <div class="cover-desktop"></div>
+        </label>
+
+        <label class="product-wrapper-overlay">
+          <img src="assets/images/image-product-4-thumbnail.jpg" alt="product 4">
+          <input type="radio" name="product" value="4" hidden>
+          <div class="cover-desktop"></div>
+        </label>
+      </div>
     </section>
   </div>
 
@@ -47,11 +77,11 @@
       <img src="assets/images/logo.svg" alt="logo" class="brand-name">
 
       <nav class="nav">
-        <p class="nav__collection">Collection</p>
-        <p class="nav__men">Men</p>
-        <p class="nav__women">Women</p>
-        <p class="nav__about">About</p>
-        <p class="nav__contact">Contact</p>
+        <p class="nav__item">Collection</p>
+        <p class="nav__item">Men</p>
+        <p class="nav__item">Women</p>
+        <p class="nav__item">About</p>
+        <p class="nav__item">Contact</p>
       </nav>
     </div>
 
@@ -65,6 +95,7 @@
 
   <main class="main__content">
     <article class="slider">
+
       <div class="slider__buttons-container">
         <button data-value="prev" class="prev">
           <img src="assets/images/icon-previous.svg" alt="left__arrow">
@@ -78,30 +109,29 @@
       <img src="assets/images/image-product-1.jpg" alt="left arrow" class="product__image">
       <div class="product-slider">
 
-        <label class="product-wrapper-1">
+        <label class="product-wrapper-desktop">
           <img src="assets/images/image-product-1-thumbnail.jpg" alt="product 1">
           <input type="radio" name="product" value="1"  checked hidden>
           <div class="cover"></div>
         </label>
 
-        <label class="product-wrapper-2">
+        <label class="product-wrapper-desktop">
           <img src="assets/images/image-product-2-thumbnail.jpg" alt="product 2">
           <input type="radio" name="product" value="2" hidden>
           <div class="cover"></div>
         </label>
 
-        <label class="product-wrapper-3"> 
+        <label class="product-wrapper-desktop"> 
           <img src="assets/images/image-product-3-thumbnail.jpg" alt="product 3">
           <input type="radio" name="product" value="3" hidden>
           <div class="cover"></div>
         </label>
 
-        <label class="product-wrapper-4">
+        <label class="product-wrapper-desktop">
           <img src="assets/images/image-product-4-thumbnail.jpg" alt="product 4">
           <input type="radio" name="product" value="4" hidden>
           <div class="cover"></div>
         </label>
-        
       </div>
        
     </article>
@@ -158,6 +188,7 @@
       </article>
 
     </section>
+
 
   </main>
   

@@ -1,6 +1,6 @@
 // Toggle products (Desktop)
 const productImage = document.querySelector(".product__image");
-const radios = document.querySelectorAll("input[type='radio']");
+const radios = document.querySelectorAll(".product-wrapper-desktop input[type='radio']");
 const productImages = ["assets/images/image-product-1.jpg", "assets/images/image-product-2.jpg", "assets/images/image-product-3.jpg", "assets/images/image-product-4.jpg"];
 
 radios.forEach((radio, index) => {
@@ -19,7 +19,6 @@ const closeIcon = document.querySelector(".close");
 menuIcon.addEventListener('click', () => {
   overlay.style.display = "flex";
 })
-
 
 closeIcon.addEventListener('click', () => {
   overlay.style.display = "none";
@@ -57,21 +56,50 @@ quantity.addEventListener('input', () => {
 // Mobile product slider
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
-let imgIndex = 0;
 
-next.addEventListener('click', () => {
-  imgIndex++;
-  if(imgIndex >= productImages.length) {
-    imgIndex = 0;
+function sliderImg(image, next, prev) {
+  let imgIndex = 0;
+
+  next.addEventListener('click', () => {
+    imgIndex++;
+    if(imgIndex >= productImages.length) {
+      imgIndex = 0;
+    }
+    image.src = productImages[imgIndex];
+  })
+
+  prev.addEventListener('click', () => {
+    imgIndex--;
+    if(imgIndex < 0) {
+      imgIndex = 3;
+    }
+    image.src = productImages[imgIndex];
+  })
+}
+
+sliderImg(productImage, next, prev);
+
+// Desktop product slider (overlay)
+const highlightedImg = document.querySelector(".highlighted-img")
+const overlayDesktop = document.querySelector(".overlay-desktop");
+const closeOverlay = document.querySelector(".close-overlay-desktop");
+const nextDesktop = document.querySelector(".next-desktop");
+const prevDesktop = document.querySelector(".prev-desktop");
+
+function changeSize() {
+  if(window.matchMedia("min-width: 55.625rem")) {
+    const overlayDesktop = document.querySelector(".overlay-desktop");
+    productImage.addEventListener('click', () => {
+      overlayDesktop.style.display = "flex";
+    })
+
+    sliderImg(highlightedImg, nextDesktop, prevDesktop);
   }
-  productImage.src = productImages[imgIndex];
-})
+}
 
-prev.addEventListener('click', () => {
-  imgIndex--;
-  if(imgIndex < 0) {
-    imgIndex = 3;
-  }
-  productImage.src = productImages[imgIndex];
-})
+changeSize();
+window.addEventListener('resize', changeSize);
 
+closeOverlay.addEventListener('click', () => {
+  overlayDesktop.style.display = "none";
+})

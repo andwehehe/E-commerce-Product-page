@@ -94,7 +94,12 @@ hr {
   display: none;
 }
 
-.nav > * {
+.nav__item {
+  border-bottom: solid 2px transparent;
+}
+
+.nav__item:hover {
+  border-bottom: solid 2px var(--Orange);
   cursor: pointer;
 }
 /* HEADING END */
@@ -117,13 +122,47 @@ hr {
   object-position: center;
 }
 
-.slider__buttons-container {
+.slider__buttons-container,
+.sb-container-overlay {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding-inline: 1rem;
   position: absolute;
   top: 45%;
+}
+
+.sb-container-overlay {
+  width: 115%;
+}
+
+.next-desktop, 
+.prev-desktop {
+    width: 4rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next-desktop:hover,
+.prev-desktop:hover {
+  cursor: pointer;
+}
+
+.next-desktop img {
+  margin-inline-start: 0.5rem;
+}
+
+.prev-desktop img {
+  margin-inline-end: 0.5rem;
+}
+
+.close-overlay-desktop {
+  width: 1.5rem;
 }
 
 .prev, 
@@ -319,15 +358,56 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /* MENU OVERLAY START */
-.overlay {
+.overlay-mobile {
   background-color: rgb(0, 0, 0, 0.7);
   width: 100vw;
   height: 100%;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: flex-start;
   display: none;
+}
+
+.overlay-desktop {
+  background-color: rgb(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.remove-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-block-end: 1.5rem;
+}
+
+.overlay-desktop-slider {
+  display: flex;
+  justify-content: space-evenly;
+  margin-block-start: 1.5rem;
+  padding-inline: 1rem;
+}
+
+.product-wrapper-overlay img{
+  width: 5.5rem;
+}
+
+.highlighted-img-wrapper {
+  width: max-content;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.highlighted-img {
+  max-width: 33rem;
+  border-radius: 1rem;
 }
 
 .sidebar {
@@ -348,5 +428,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 .close:hover {
   cursor: pointer;
+}
+
+.side-menu-item {
+  border-bottom: solid 2px transparent;
+}
+
+.side-menu-item:hover {
+  border-bottom: solid 2px var(--Orange);
 }
 /* MENU OVERLAY END */

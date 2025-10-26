@@ -54,17 +54,18 @@ quantity.addEventListener('input', () => {
 })
 
 // Mobile product slider
+const radioOverlay = document.querySelectorAll(".product-wrapper-overlay input[type='radio']");
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
+let imgIndex = 0;
 
 function sliderImg(image, next, prev) {
-  let imgIndex = 0;
-
   next.addEventListener('click', () => {
     imgIndex++;
     if(imgIndex >= productImages.length) {
       imgIndex = 0;
     }
+    radioOverlay[imgIndex].checked = true;
     image.src = productImages[imgIndex];
   })
 
@@ -74,6 +75,7 @@ function sliderImg(image, next, prev) {
       imgIndex = 3;
     }
     image.src = productImages[imgIndex];
+    radioOverlay[imgIndex].checked = true;
   })
 }
 
@@ -102,4 +104,14 @@ window.addEventListener('resize', changeSize);
 
 closeOverlay.addEventListener('click', () => {
   overlayDesktop.style.display = "none";
+})
+
+// Toggle Products (overlay)
+radioOverlay.forEach((radio, index) => {
+  radio.addEventListener('change', () => {
+    if(radio.checked) {
+      highlightedImg.src = productImages[index];
+      imgIndex = index;
+    }
+  })
 })

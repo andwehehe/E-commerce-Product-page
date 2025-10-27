@@ -87,12 +87,14 @@ const overlayDesktop = document.querySelector(".overlay-desktop");
 const closeOverlay = document.querySelector(".close-overlay-desktop");
 const nextDesktop = document.querySelector(".next-desktop");
 const prevDesktop = document.querySelector(".prev-desktop");
+const body = document.querySelector("body");
 
 function changeSize() {
   if(window.matchMedia("min-width: 55.625rem")) {
     const overlayDesktop = document.querySelector(".overlay-desktop");
     productImage.addEventListener('click', () => {
       overlayDesktop.style.display = "flex";
+      body.style.overflow = "hidden";
     })
 
     sliderImg(highlightedImg, nextDesktop, prevDesktop);
@@ -104,6 +106,7 @@ window.addEventListener('resize', changeSize);
 
 closeOverlay.addEventListener('click', () => {
   overlayDesktop.style.display = "none";
+  body.style.overflow = "";
 })
 
 // Toggle Products (overlay)

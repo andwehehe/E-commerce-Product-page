@@ -128,7 +128,7 @@ hr {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-inline: 1rem;
+  padding-inline: 0.5rem;
   position: absolute;
   top: 45%;
 }
@@ -139,7 +139,7 @@ hr {
 
 .next-desktop, 
 .prev-desktop {
-    width: 4rem;
+    width: 3.5rem;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     border: none;
@@ -155,11 +155,11 @@ hr {
 }
 
 .next-desktop img {
-  margin-inline-start: 0.5rem;
+  margin-inline-start: 0.3rem;
 }
 
 .prev-desktop img {
-  margin-inline-end: 0.5rem;
+  margin-inline-end: 0.3rem;
 }
 
 .close-overlay-desktop {
@@ -407,7 +407,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .highlighted-img {
-  max-width: 33rem;
+  max-width: 29rem;
   border-radius: 1rem;
 }
 

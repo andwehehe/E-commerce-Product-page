@@ -89,24 +89,20 @@ const nextDesktop = document.querySelector(".next-desktop");
 const prevDesktop = document.querySelector(".prev-desktop");
 const body = document.querySelector("body");
 
-function changeSize() {
-  if(window.matchMedia("min-width: 55.625rem")) {
-    const overlayDesktop = document.querySelector(".overlay-desktop");
-    productImage.addEventListener('click', () => {
-      overlayDesktop.style.display = "flex";
-      body.style.overflow = "hidden";
-    })
 
-    sliderImg(highlightedImg, nextDesktop, prevDesktop);
-  }
-}
-
-changeSize();
-window.addEventListener('resize', changeSize);
+  productImage.addEventListener('click', () => {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    overlayDesktop.style.display = "flex";
+    body.style.overflow = "hidden";
+    body.style.paddingRight = `${scrollbarWidth}px`;
+  })
+  
+  sliderImg(highlightedImg, nextDesktop, prevDesktop);
 
 closeOverlay.addEventListener('click', () => {
   overlayDesktop.style.display = "none";
   body.style.overflow = "";
+  body.style.paddingRight = "";
 })
 
 // Toggle Products (overlay)

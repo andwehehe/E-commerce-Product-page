@@ -13,7 +13,7 @@ radios.forEach((radio, index) => {
 
 // Mobile Menu Sidebar
 const menuIcon = document.querySelector(".menu__icon");
-const overlay = document.querySelector(".overlay");
+const overlay = document.querySelector(".overlay-mobile");
 const closeIcon = document.querySelector(".close");
 
 menuIcon.addEventListener('click', () => {
@@ -88,16 +88,18 @@ const closeOverlay = document.querySelector(".close-overlay-desktop");
 const nextDesktop = document.querySelector(".next-desktop");
 const prevDesktop = document.querySelector(".prev-desktop");
 const body = document.querySelector("body");
+const validForOverlay = window.matchMedia("(min-width: 890px)");
 
-
-  productImage.addEventListener('click', () => {
+productImage.addEventListener('click', () => {
+  if(validForOverlay.matches) {
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     overlayDesktop.style.display = "flex";
     body.style.overflow = "hidden";
     body.style.paddingRight = `${scrollbarWidth}px`;
-  })
-  
-  sliderImg(highlightedImg, nextDesktop, prevDesktop);
+  }
+})
+
+sliderImg(highlightedImg, nextDesktop, prevDesktop);
 
 closeOverlay.addEventListener('click', () => {
   overlayDesktop.style.display = "none";
@@ -112,5 +114,70 @@ radioOverlay.forEach((radio, index) => {
       highlightedImg.src = productImages[index];
       imgIndex = index;
     }
+  })
+})
+
+// Cart Overlay
+const overlayCart = document.querySelector(".overlay-cart");
+const cartIcon = document.querySelector(".cart__icon");
+
+cartIcon.addEventListener('click', () => {
+  overlayCart.style.display = "flex";
+})
+
+overlayCart.addEventListener('click', () => {
+  overlayCart.style.display = "";
+})
+
+//Add to cart
+const emptyCart = document.querySelector(".empty-cart");
+const addToCart = document.querySelector(".add-to-cart");
+const yourCart = document.querySelector(".your-cart");
+
+addToCart.addEventListener('click', () => {
+  if(!quantity.value || quantity.value == 0 || emptyCart.style.display === "none") {
+    return;
+  }
+
+  const orderQuantity = quantity.value;
+  const totalPrice = quantity.value * 125;
+
+  emptyCart.style.display = "none";
+
+  const addOrder = document.createElement("div");
+  addOrder.classList.add("order-info");
+
+  const addButton = document.createElement("button");
+  addButton.classList.add("checkout-btn");
+  addButton.textContent = "Checkout"
+
+  addOrder.innerHTML = `
+      <img src="assets/images/image-product-1-thumbnail.jpg" alt="product-preview" class="ordered-product">
+      <div class="order-details">
+        <p class="ordered-product-name">Fall Limited Edition Sneakers</p>
+        <p class="price">$125.00 x 
+          <span class="order-quantity">${orderQuantity}</span> 
+          <span class="total-price">$${totalPrice.toFixed(2)}</span>
+        </p>
+      </div>
+      <img src="assets/images/icon-delete.svg" alt="delete icon" class="delete-order">
+  `;
+
+  yourCart.appendChild(addOrder);
+  yourCart.appendChild(addButton);
+
+  //Quantity Indicator
+  const quantityIndicator = document.querySelector(".quantity-indicator");
+  quantityIndicator.style.display = "block";
+  quantityIndicator.textContent = quantity.value;
+
+  //Remove Order
+  const deleteOrder = addOrder.querySelector(".delete-order");
+  deleteOrder.addEventListener('click', (event) => {
+    event.stopPropagation();
+    yourCart.removeChild(addOrder);
+    addButton.style.display = "none";
+    emptyCart.style.display = "flex";
+    quantityIndicator.style.display = "";
   })
 })

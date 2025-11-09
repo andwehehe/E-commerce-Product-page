@@ -167,6 +167,10 @@
     background-color: rgb(255, 255, 255, 0.3);
     cursor: pointer;
   }
+
+    .your-cart {
+      margin-inline-end: 7.5rem;
+    }
 }
 
 

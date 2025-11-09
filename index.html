@@ -10,6 +10,13 @@
 </head>
 <body>
 
+  <div class="overlay-cart">
+    <article class="your-cart">
+      <p class="cart-label">Cart</p>
+      <p class="empty-cart">Your cart is empty.</p>
+    </article>
+  </div>
+
   <div class="overlay-mobile">
     <section class="sidebar">
       <img src="assets/images/icon-close.svg" alt="close" class="close">
@@ -86,7 +93,10 @@
     </div>
 
     <div class="right__division">
-      <img src="assets/images/icon-cart.svg" alt="cart" class="cart__icon">
+      <div class="cart-icon-container">
+        <div class="quantity-indicator"></div>
+        <img src="assets/images/icon-cart.svg" alt="cart" class="cart__icon">
+      </div>
       <img src="assets/images/image-avatar.png" alt="user profile" class="profile__pic">
     </div>
   </header>
@@ -133,7 +143,6 @@
           <div class="cover"></div>
         </label>
       </div>
-       
     </article>
 
     <section class="product-info">
